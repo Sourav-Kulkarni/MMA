@@ -11,29 +11,25 @@ description: Kali training dashboard and quick reference
 ## Quick Navigation
 
 <div class="stats-row">
-  <div class="stat-box">
-    <div class="stat-value">12</div>
-    <div class="stat-label">Angles of Attack</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-value">3</div>
-    <div class="stat-label">Weapons Covered</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-value">6+</div>
-    <div class="stat-label">Core Drills</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-value">∞</div>
-    <div class="stat-label">Reps to Mastery</div>
-  </div>
+  <a class="stat-box" href="conditioning/warmup/">
+    <div class="stat-value">①</div>
+    <div class="stat-label">Warm-Up Routine</div>
+  </a>
+  <a class="stat-box" href="fundamentals/striking-angles/">
+    <div class="stat-value">②</div>
+    <div class="stat-label">12 Angles of Attack</div>
+  </a>
+  <a class="stat-box" href="drills/">
+    <div class="stat-value">③</div>
+    <div class="stat-label">Drills</div>
+  </a>
 </div>
 
 ---
 
 ## What is Kali?
 
-**Kali** (also called **Arnis** or **Eskrima**) is the national martial art and sport of the Philippines. It is a weapon-based system — primarily stick and blade — that also encompasses empty-hand combat. What makes Kali unique:
+**Kali** (also called **Arnis** or **Eskrima**) is the national martial art of the Philippines. It is a weapon-based system — primarily stick and blade — that also encompasses empty-hand combat. What makes Kali unique:
 
 - Weapon training comes **first**, transferring naturally to open-hand fighting
 - Strong emphasis on **flow**, angles of attack, and defanging the snake (disarming)
@@ -56,15 +52,25 @@ description: Kali training dashboard and quick reference
 
 ## Today's Training Checklist
 
-Use this before every session. Check off as you go.
+Use this before every session. Tap to check off as you go — resets when you close the tab.
 
-- [ ] **Warm-up** complete (see [Warm-Up Routine](conditioning/warmup.md))
-- [ ] Reviewed today's **target technique**
-- [ ] Solo drill — slow reps (muscle memory, not speed)
-- [ ] Solo drill — full speed
-- [ ] Partner drill (if applicable)
-- [ ] Cool-down / stretching
-- [ ] Note anything to review next session
+<div class="session-checklist">
+  <label><input type="checkbox"> Warm-up complete</label>
+  <label><input type="checkbox"> Reviewed today's target technique</label>
+  <label><input type="checkbox"> Solo drill — slow reps (muscle memory, not speed)</label>
+  <label><input type="checkbox"> Solo drill — full speed</label>
+  <label><input type="checkbox"> Partner drill (if applicable)</label>
+  <label><input type="checkbox"> Cool-down and stretching</label>
+  <label><input type="checkbox"> Note anything to review next session</label>
+</div>
+
+<script>
+  document.querySelectorAll('.session-checklist input[type="checkbox"]').forEach(function(box) {
+    box.addEventListener('change', function() {
+      this.closest('label').classList.toggle('checked', this.checked);
+    });
+  });
+</script>
 
 ---
 

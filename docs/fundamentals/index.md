@@ -4,8 +4,6 @@ title: Fundamentals
 
 # Fundamentals
 
-> These are the building blocks. Everything else — drills, weapons, sparring — is built on top of these. Do not rush past them.
-
 ## Pages in This Section
 
 | Page | Focus |
