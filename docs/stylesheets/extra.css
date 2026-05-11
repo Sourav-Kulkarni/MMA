@@ -1,0 +1,371 @@
+/* ============================================================
+   Kali Training — Book-style typography
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --book-ink:        #1c1917;
+  --book-ink-soft:   #44403c;
+  --book-ink-muted:  #78716c;
+  --book-rule:       #d6d3d1;
+  --book-bg:         #faf9f7;
+  --book-surface:    #f3f0eb;
+  --book-accent:     #6b3a2a;
+  --book-accent-dim: #9c6b55;
+
+  --book-lh-body:    1.5;
+  --book-lh-heading: 1.25;
+}
+
+/* ── Override Material's own colour variables — light mode ── */
+/* Without this, Material's --md-default-fg/bg-color win over ours */
+[data-md-color-scheme="default"] {
+  --md-default-fg-color:         #1c1917;
+  --md-default-fg-color--light:  #44403c;
+  --md-default-fg-color--lighter:#78716c;
+  --md-default-bg-color:         #faf9f7;
+  --md-primary-fg-color:         #6b3a2a;
+  --md-primary-bg-color:         #faf9f7;
+  --md-accent-fg-color:          #6b3a2a;
+  --md-typeset-a-color:          #6b3a2a;
+
+  /* Header and tabs must be told explicitly — Material overrides these */
+  --md-header-fg-color:          #1c1917;
+  --md-header-bg-color:          #faf9f7;
+}
+
+/* ── Dark mode tokens + Material overrides ── */
+[data-md-color-scheme="slate"] {
+  --book-ink:        #e8e4df;
+  --book-ink-soft:   #c4bdb6;
+  --book-ink-muted:  #8a8078;
+  --book-rule:       #3a3530;
+  --book-bg:         #1a1714;
+  --book-surface:    #231f1b;
+  --book-accent:     #c4936a;
+  --book-accent-dim: #a07050;
+
+  --md-default-fg-color:         #e8e4df;
+  --md-default-fg-color--light:  #c4bdb6;
+  --md-default-fg-color--lighter:#8a8078;
+  --md-default-bg-color:         #1a1714;
+  --md-primary-fg-color:         #c4936a;
+  --md-primary-bg-color:         #1a1714;
+  --md-accent-fg-color:          #c4936a;
+  --md-typeset-a-color:          #c4936a;
+
+  --md-header-fg-color:          #e8e4df;
+  --md-header-bg-color:          #1a1714;
+}
+
+/* ── Base page ── */
+.md-main {
+  background: var(--book-bg);
+}
+
+.md-content__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Body text ── */
+.md-typeset {
+  font-family: 'Lora', Georgia, serif;
+  font-size: medium;
+  line-height: var(--book-lh-body);
+  color: var(--book-ink);
+  letter-spacing: normal;
+}
+
+.md-typeset p {
+  margin: 0 0 1.3em 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ── Headings — Cinzel, no extra tracking or leading ── */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: 'Cinzel', 'Times New Roman', serif;
+  font-weight: 600;
+  line-height: var(--book-lh-heading);
+  color: var(--book-ink);
+  letter-spacing: normal;
+}
+
+.md-typeset h1 {
+  font-size: 1.9rem;
+  border-bottom: 1px solid var(--book-rule);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.35rem;
+  margin-top: 2.4rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid var(--book-rule);
+  padding-bottom: 0.3rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--book-accent);
+}
+
+.md-typeset h4 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--book-ink-muted);
+  margin-top: 1.4rem;
+  letter-spacing: normal;
+}
+
+/* ── Horizontal rules ── */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--book-rule);
+  margin: 2rem 0;
+}
+
+/* ── Links ── */
+.md-typeset a {
+  color: var(--book-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--book-accent-dim);
+  text-underline-offset: 3px;
+}
+
+.md-typeset a:hover {
+  color: var(--book-accent-dim);
+}
+
+/* ── Tables ── */
+.md-typeset table {
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.md-typeset table th {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--book-ink-muted);
+  border-bottom: 2px solid var(--book-rule);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  background: transparent;
+}
+
+.md-typeset table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--book-rule);
+  color: var(--book-ink-soft);
+  vertical-align: top;
+}
+
+.md-typeset table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Blockquotes ── */
+.md-typeset blockquote {
+  border-left: 3px solid var(--book-accent-dim);
+  margin: 1.5rem 0;
+  padding: 0.2rem 1.2rem;
+  color: var(--book-ink-soft);
+  font-style: italic;
+}
+
+/* ── Code ── */
+.md-typeset code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82em;
+  background: var(--book-surface);
+  border: 1px solid var(--book-rule);
+  border-radius: 2px;
+  padding: 0.1em 0.35em;
+  color: var(--book-ink);
+}
+
+.md-typeset pre > code {
+  background: var(--book-surface);
+  border: 1px solid var(--book-rule);
+  border-radius: 3px;
+  padding: 1rem 1.2rem;
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+/* ── Admonitions ── */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--book-rule);
+  border-left: 3px solid var(--book-accent-dim);
+  border-radius: 2px;
+  background: var(--book-surface);
+  font-size: 0.92rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  background: transparent;
+  border-bottom: 1px solid var(--book-rule);
+}
+
+/* ── Navigation sidebar ── */
+.md-nav__title,
+.md-nav__link {
+  font-family: 'Lora', serif;
+  letter-spacing: normal;
+}
+
+.md-nav__link--active {
+  color: var(--book-accent) !important;
+  font-weight: 600;
+}
+
+/* ── Site header ── */
+.md-header {
+  background: var(--book-bg);
+  border-bottom: 1px solid var(--book-rule);
+  box-shadow: none;
+  color: var(--book-ink);
+}
+
+.md-header__title {
+  font-family: 'Cinzel', serif;
+  letter-spacing: normal;
+  color: var(--book-ink);
+}
+
+/* ── Tabs ── */
+.md-tabs {
+  background: var(--book-bg);
+  border-bottom: 1px solid var(--book-rule);
+  color: var(--book-ink);
+}
+
+.md-tabs__link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: var(--book-ink-muted);
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--book-accent) !important;
+}
+
+/* ── Angle badge ── */
+.angle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid var(--book-accent-dim);
+  border-radius: 50%;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  color: var(--book-accent);
+  margin-right: 0.3rem;
+}
+
+/* ── GIF containers ── */
+.gif-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.gif-container img {
+  border: 1px solid var(--book-rule);
+  max-width: 100%;
+}
+
+.gif-caption {
+  font-size: 0.82rem;
+  color: var(--book-ink-muted);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ── Stats row (home page) ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-box {
+  border: 1px solid var(--book-rule);
+  padding: 1rem;
+  text-align: center;
+  background: var(--book-surface);
+}
+
+.stat-box .stat-value {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  color: var(--book-accent);
+  line-height: 1;
+}
+
+.stat-box .stat-label {
+  font-size: 0.7rem;
+  color: var(--book-ink-muted);
+  margin-top: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+/* ── Hero (home page) ── */
+.kali-hero {
+  border-top: 2px solid var(--book-ink);
+  border-bottom: 2px solid var(--book-ink);
+  padding: 2rem 0;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.kali-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: var(--book-ink);
+  margin: 0 0 0.4rem 0;
+  border: none;
+  padding: 0;
+  letter-spacing: normal;
+}
+
+.kali-hero .subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--book-ink-muted);
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Print ── */
+@media print {
+  .md-header, .md-tabs, .md-footer, .md-sidebar { display: none; }
+  .md-typeset { font-size: 11pt; line-height: 1.7; }
+  .md-content__inner { max-width: 100%; }
+}
